@@ -27,3 +27,18 @@ javax.servlet.ServletException: Circular view path [/getUser]: would dispatch ba
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.5.RELEASE.jar:5.2.5.RELEASE]
 
 解决方法：在controller上面添加 @RestController 或者在方法上面添加 @ResponseBody，应为服务返回的都是 json 格式数据
+
+本地创建并切换分支 sbd-base，起点为master。作为springboot + dubbo 基本集成方案
+
+```shell script
+git checkout -b sbd-base master
+```
+
+将 sbd-base 分支推送到服务器上面
+
+```shell script
+git push origin sbd-base
+```
+
+本地修改文件commit后，提交到sdb-base分支，因为是第一次提交，--set-upstream 参数建立本地分支与服务器分支关联，再提交
+git push --set-upstream origin sbd-base
