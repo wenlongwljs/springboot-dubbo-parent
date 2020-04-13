@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: springboot-dubbo-consumer
+  mvc:
+    view:
+      prefix: /
+server:
+  port: 8081
+
